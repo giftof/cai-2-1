@@ -25,7 +25,7 @@ def home():
     if request.method == 'POST':
         input_text = request.form.get('input_text')
         lang = request.form.get('lang', 'ko')
-
+        
         if lang not in [l.value for l in LANGS]:
             return render_template("index.html", error=f"언어 설정 오류 received: [{lang}]", selected_lang='ko')
         
@@ -38,7 +38,9 @@ def home():
                     f.write(log_entry)
             except ValueError as e:
                 return render_template("index.html", error=e, selected_lang=lang)
-                
+        
+        print(f"[PID {os.getpid()}] received ({lang}):_{input_text}")
+
         try:
             fp = BytesIO()
             gTTS(input_text, "com", lang).write_to_fp(fp)

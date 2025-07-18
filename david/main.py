@@ -39,6 +39,8 @@ def home():
             except ValueError as e:
                 return render_template("index.html", error=e, selected_lang=lang)
                 
+        print(f"[PID {os.getpid()}] received ({lang}):_{input_text}")
+
         try:
             fp = BytesIO()
             gTTS(input_text, "com", lang).write_to_fp(fp)
