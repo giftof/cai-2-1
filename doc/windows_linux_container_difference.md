@@ -65,3 +65,4 @@ Docker Desktop에서 **컨테이너 유형 전환**은 우측 하단 Docker 아�
 
 - [Docker 공식 문서: Windows Containers](https://docs.docker.com/desktop/windows/)
 - [Microsoft: Windows and Linux Containers](https://learn.microsoft.com/en-us/virtualization/windowscontainers/)
+
