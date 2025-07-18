@@ -1,10 +1,8 @@
-FROM python:3.11-slim
+FROM python:3
 
 WORKDIR /app
 
 COPY . .
-
-RUN mv david/app.py david/main.py
 
 RUN pip install --no-cache-dir -r requirements.txt
 
